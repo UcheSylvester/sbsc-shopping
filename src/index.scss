@@ -1,0 +1,44 @@
+// FOR BASE STYLES
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  // This defines the value of 1rem.
+  font-size: 62.5%; // 62.5% of 16px (default browser font size) = 10px
+}
+
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--default-font-size);
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+// CSS CUSTOM PROPERTIES (VARIABLES)
+body {
+  --default-font-size: 1.6rem;
+}
