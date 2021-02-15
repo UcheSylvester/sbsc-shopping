@@ -42,6 +42,7 @@ body {
   flex-direction: column;
 }
 
+// GENERIC STYLES
 button {
   cursor: pointer;
 }
@@ -52,6 +53,8 @@ ul {
 
 main {
   margin-top: 7rem;
+  display: flex;
+  flex-direction: column;
 }
 
 // TYPOGRAPHY
