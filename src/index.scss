@@ -50,10 +50,11 @@ ul {
 }
 
 main {
-  margin-top: 7rem;
+  margin-top: 8rem;
   display: flex;
   flex-direction: column;
   padding: 1rem;
+  min-height: 100vh;
 
   @media (min-width: 600px) {
     padding: 0 2rem;
@@ -79,7 +80,7 @@ main {
 }
 
 .heading-tertiary {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }

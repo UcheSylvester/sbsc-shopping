@@ -1,11 +1,15 @@
-import { AiFillStar } from "react-icons/ai";
-import { BsStarHalf } from "react-icons/bs";
+import { useHistory } from "react-router-dom";
+import ProductRatings from "../product-ratings/product-ratings.component";
 
 import "./product-item.styles.scss";
 
 const ProductItem = () => {
+  const history = useHistory();
   return (
-    <article className="product-item">
+    <article
+      className="product-item"
+      onClick={() => history.push("/bag/vintage_bag")}
+    >
       <img
         src="https://image.shutterstock.com/image-photo/red-elegant-female-bag-two-260nw-1032419707.jpg"
         alt="product"
@@ -17,13 +21,7 @@ const ProductItem = () => {
         <div className="product-item__details--top">
           <h3 className="heading-tertiary">Vintage Bag</h3>
 
-          <div className="product-item__ratings">
-            <AiFillStar />
-            <AiFillStar />
-            <AiFillStar />
-            <AiFillStar />
-            <BsStarHalf />
-          </div>
+          <ProductRatings />
         </div>
 
         <div className="product-item__details--bottom">
