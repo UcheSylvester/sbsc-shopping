@@ -1,0 +1,26 @@
+.header {
+  min-height: 6.5rem;
+  box-shadow: 0 5px 5px -5px rgba(#000, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+
+  &__brand-container,
+  &__icons-container {
+    border: 1px solid green;
+    height: 100%;
+    min-width: 10rem;
+    display: flex;
+    align-items: center;
+  }
+
+  &__brand-container {
+    &-logo {
+      min-width: 5rem;
+      border: 1px solid red;
+      padding: 1rem;
+      margin-right: 1.5rem;
+    }
+  }
+}

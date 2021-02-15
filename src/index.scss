@@ -1,3 +1,11 @@
+// CSS CUSTOM PROPERTIES (VARIABLES)
+body {
+  --default-font-family: "Ubuntu", "sans-sarif";
+  --default-font-size: 1.6rem;
+  --default-box-shadow: 0 5px 5px -5px rgba(#000, 0.15);
+  --color-gray: #aaa;
+}
+
 // FOR BASE STYLES
 *,
 *::after,
@@ -22,6 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   font-size: var(--default-font-size);
+  font-family: var(--default-font-family);
 }
 
 #root {
@@ -38,7 +47,9 @@ ul {
   list-style: none;
 }
 
-// CSS CUSTOM PROPERTIES (VARIABLES)
-body {
-  --default-font-size: 1.6rem;
+// TYPOGRAPHY
+.heading-primary {
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 2.7rem;
 }
