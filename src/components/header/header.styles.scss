@@ -4,13 +4,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 
   &__brand-container,
   &__icons-container {
-    border: 1px solid green;
     height: 100%;
-    min-width: 10rem;
     display: flex;
     align-items: center;
   }

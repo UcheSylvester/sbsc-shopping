@@ -1,4 +1,5 @@
 import { RiShoppingCartLine } from "react-icons/ri";
+import { BiSearch } from "react-icons/bi";
 
 import CustomIcon from "../custom-icon/custom-icon.component";
 import "./header.styles.scss";
@@ -14,7 +15,11 @@ const Header: React.FC = () => {
 
       <div className="header__icons-container">
         <CustomIcon>
-          <RiShoppingCartLine className="custom-icon__icon" />
+          <BiSearch className="custom-icon__search" />
+        </CustomIcon>
+
+        <CustomIcon count={5}>
+          <RiShoppingCartLine />
         </CustomIcon>
       </div>
     </header>
