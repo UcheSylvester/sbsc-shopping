@@ -55,6 +55,15 @@ main {
   margin-top: 7rem;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+
+  @media (min-width: 600px) {
+    padding: 0 2rem;
+
+    &__brand-container-logo {
+      margin-right: 1.5rem;
+    }
+  }
 }
 
 // TYPOGRAPHY
@@ -62,4 +71,17 @@ main {
   font-size: 1.8rem;
   font-weight: normal;
   line-height: 2.7rem;
+}
+
+.heading-secondary {
+  font-size: 1.6rem;
+  font-weight: normal;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
+}
+
+.heading-tertiary {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
