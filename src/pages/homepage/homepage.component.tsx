@@ -1,12 +1,12 @@
-import ProductItem from "../../components/product-item/product-item.component";
+import ProductItemsCollection from "../../components/product-items-collection/product-items-collection.component";
 import "./homepage.styles.scss";
 
 const HomePage = () => {
   return (
     <main className="homepage">
-      <h1>HOME PAGE</h1>
-
-      <ProductItem />
+      <ProductItemsCollection />
+      <ProductItemsCollection />
+      <ProductItemsCollection />
     </main>
   );
 };

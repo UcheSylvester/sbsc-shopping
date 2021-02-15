@@ -1,0 +1,16 @@
+.products-collection {
+  margin: 2rem 0;
+
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  /**TODO
+  use CSS Grid here
+  ***/
+}

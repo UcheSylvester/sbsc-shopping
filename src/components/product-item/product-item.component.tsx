@@ -5,16 +5,17 @@ import "./product-item.styles.scss";
 
 const ProductItem = () => {
   return (
-    <section className="product-item">
+    <article className="product-item">
       <img
-        src="https://user-images.githubusercontent.com/194400/49531010-48dad180-f8b1-11e8-8d89-1e61320e1d82.png"
+        src="https://image.shutterstock.com/image-photo/red-elegant-female-bag-two-260nw-1032419707.jpg"
         alt="product"
         className="product-item__image"
+        loading="lazy"
       />
 
       <div className="product-item__details">
         <div className="product-item__details--top">
-          <h2 className="heading-secondary product-item-title">Vintage Bag</h2>
+          <h3 className="heading-tertiary">Vintage Bag</h3>
 
           <div className="product-item__ratings">
             <AiFillStar />
@@ -30,7 +31,7 @@ const ProductItem = () => {
           <p className="product-item__store">Scrader Store</p>
         </div>
       </div>
-    </section>
+    </article>
   );
 };
 
