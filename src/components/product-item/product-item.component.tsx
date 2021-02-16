@@ -1,6 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { ProductItemProps } from "../../redux/products-collection/products-collection.types";
-import { PLACEHOLDER_PRODUCT_IMAGE } from "../../utils/utils";
+import { formatter, PLACEHOLDER_PRODUCT_IMAGE } from "../../utils/utils";
 import ProductRatings from "../product-ratings/product-ratings.component";
 
 import "./product-item.styles.scss";
@@ -34,7 +34,9 @@ const ProductItem: React.FC<Props> = ({ productItem }) => {
         </div>
 
         <div className="product-item__details--bottom">
-          <p className="product-item__price">{selling_price}</p>
+          <p className="product-item__price">
+            &#8358; {formatter(selling_price || 0)}
+          </p>
           <p className="product-item__store">{merchant?.name}</p>
         </div>
       </div>
