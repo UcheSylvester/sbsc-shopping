@@ -4,29 +4,43 @@ import { BiSearch } from "react-icons/bi";
 import CustomIcon from "../custom-icon/custom-icon.component";
 import "./header.styles.scss";
 import { Link } from "react-router-dom";
+import { createStructuredSelector } from "reselect";
+import { AppStateTypes } from "../../redux/root.reducer";
+import { selectCartItemCount } from "../../redux/cart/cart.selector";
+import { connect } from "react-redux";
 
-const Header: React.FC = () => {
-  return (
-    <header className="header">
-      <div className="header__brand-container">
-        <Link className="header__logo" to="/">
-          LOGO
-        </Link>
+type Props = LinkStateProps;
 
-        <h1 className="heading-primary">Acme Store</h1>
-      </div>
+const Header: React.FC<Props> = ({ cartItemsCount }) => (
+  <header className="header">
+    <div className="header__brand-container">
+      <Link className="header__logo" to="/">
+        LOGO
+      </Link>
 
-      <div className="header__icons-container">
-        <CustomIcon>
-          <BiSearch className="custom-icon__search" />
-        </CustomIcon>
+      <h1 className="heading-primary">Acme Store</h1>
+    </div>
 
-        <CustomIcon count={5}>
-          <RiShoppingCartLine />
-        </CustomIcon>
-      </div>
-    </header>
-  );
+    <div className="header__icons-container">
+      <CustomIcon>
+        <BiSearch className="custom-icon__search" />
+      </CustomIcon>
+
+      <CustomIcon count={cartItemsCount}>
+        <RiShoppingCartLine />
+      </CustomIcon>
+    </div>
+  </header>
+);
+
+type LinkStateProps = {
+  cartItemsCount: number;
 };
 
-export default Header;
+const mapStateToProps = createStructuredSelector<AppStateTypes, LinkStateProps>(
+  {
+    cartItemsCount: selectCartItemCount,
+  }
+);
+
+export default connect(mapStateToProps)(Header);

@@ -11,3 +11,15 @@ export const formatter = (amount: number) =>
 
 export const scrollToTop = () =>
   document.body.scrollIntoView({ behavior: "smooth", block: "start" });
+
+type FindExistingItemOption = {
+  items: Array<any>;
+  key: string;
+  value: string;
+};
+
+export const findExistingItem = ({
+  items,
+  key,
+  value,
+}: FindExistingItemOption) => items.find((item) => item[key] === value);

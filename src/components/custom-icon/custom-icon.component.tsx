@@ -4,13 +4,13 @@ type CustomIconProps = {
   count?: number;
 };
 
-const CustomIcon: React.FC<CustomIconProps> = ({ count, children }) => {
-  return (
-    <div className="custom-icon">
-      {children}
-      {count ? <div className="custom-icon__count">{count}</div> : null}
-    </div>
-  );
-};
+const CustomIcon: React.FC<CustomIconProps> = ({ count, children }) => (
+  <div className="custom-icon">
+    {children}
+    {count === 0 || count ? (
+      <div className="custom-icon__count">{count}</div>
+    ) : null}
+  </div>
+);
 
 export default CustomIcon;

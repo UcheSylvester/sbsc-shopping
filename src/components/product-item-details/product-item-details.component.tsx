@@ -6,14 +6,23 @@ import Counter from "../counter/counter.component";
 import CustomButton from "../custom-button/custom-button.component";
 import { ProductItemProps } from "../../redux/products-collection/products-collection.types";
 import { PLACEHOLDER_PRODUCT_IMAGE } from "../../utils/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { updateCartItem } from "../../redux/cart/cart.actions";
+import { useLocation } from "react-router-dom";
+import { toast } from "react-toastify";
 
 type Props = {
   product: ProductItemProps | undefined;
 };
 
 const ProductItemDetails: React.FC<Props> = ({ product }) => {
+  const dispatch = useDispatch();
+  const { pathname } = useLocation();
+
   const { productImage, name, merchant, description } = product || {};
+
+  // Quantity for adding/removing product to cart
   const [quantity, setQuantity] = useState(0);
 
   const increaseQuantity = () =>
@@ -22,6 +31,18 @@ const ProductItemDetails: React.FC<Props> = ({ product }) => {
     setQuantity((initialValue) =>
       initialValue === 0 ? initialValue : initialValue - 1
     );
+
+  useEffect(() => {
+    setQuantity(0);
+  }, [pathname]);
+
+  // Configuring cartItem
+  const cartItem: any = { ...product, quantity };
+
+  const handleUpdateCartItem = () => {
+    dispatch(updateCartItem(cartItem));
+    toast("Item added to cart successfully!");
+  };
 
   return (
     <section className="product-item-details">
@@ -68,7 +89,7 @@ const ProductItemDetails: React.FC<Props> = ({ product }) => {
             increaseCount={increaseQuantity}
             decreaseCount={decreaseQuantity}
           />
-          <CustomButton onClick={() => console.log("clicked")}>
+          <CustomButton isDisabled={!quantity} onClick={handleUpdateCartItem}>
             Add to Cart
           </CustomButton>
         </div>

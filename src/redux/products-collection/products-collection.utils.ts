@@ -1,13 +1,5 @@
+import { findExistingItem } from "../../utils/utils";
 import { ProductsCollectionProps } from "./products-collection.types";
-
-type FindExistingItemOption = {
-  items: Array<any>;
-  key: string;
-  value: string;
-};
-
-const findExistingItem = ({ items, key, value }: FindExistingItemOption) =>
-  items.find((item) => item[key] === value);
 
 export const handleCollectionUpdates = (
   collections: ProductsCollectionProps[],

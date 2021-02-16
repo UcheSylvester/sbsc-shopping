@@ -6,6 +6,10 @@ import Header from "./components/header/header.component";
 import { BaseRoutes } from "./routes/routes.component";
 import { scrollToTop } from "./utils/utils";
 
+import { ToastContainer } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   const { pathname } = useLocation();
 
@@ -20,6 +24,16 @@ function App() {
       {BaseRoutes.map((route) => (
         <Route {...route} />
       ))}
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+      />
+      {/* Same as */}
+      <ToastContainer />
     </>
   );
 }

@@ -4,6 +4,7 @@ import { ROOT_REDUX_PERSIST_KEY } from "../utils/utils";
 import storage from "redux-persist/lib/storage";
 import productsCollectionsReducer from "./products-collection/products-collection.reducer";
 import { ProductsCollectionActionsTypes } from "./products-collection/products-collection.types";
+import cartReducer from "./cart/cart.reducer";
 
 // Basic config for setting up redux persist used for persisting the cart data
 const PERSIST_CONFIG = {
@@ -14,6 +15,7 @@ const PERSIST_CONFIG = {
 
 const rootReducer = combineReducers({
   productsCollectionsReducer,
+  cartReducer,
 });
 
 // A persisted version of the root reducer
