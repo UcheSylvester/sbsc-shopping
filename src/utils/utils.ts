@@ -8,3 +8,6 @@ export const PLACEHOLDER_PRODUCT_IMAGE =
 
 export const formatter = (amount: number) =>
   new Intl.NumberFormat("en-US").format(amount);
+
+export const scrollToTop = () =>
+  document.body.scrollIntoView({ behavior: "smooth", block: "start" });

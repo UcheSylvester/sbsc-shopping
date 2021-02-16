@@ -6,6 +6,7 @@ import Counter from "../counter/counter.component";
 import CustomButton from "../custom-button/custom-button.component";
 import { ProductItemProps } from "../../redux/products-collection/products-collection.types";
 import { PLACEHOLDER_PRODUCT_IMAGE } from "../../utils/utils";
+import { useState } from "react";
 
 type Props = {
   product: ProductItemProps | undefined;
@@ -13,6 +14,15 @@ type Props = {
 
 const ProductItemDetails: React.FC<Props> = ({ product }) => {
   const { productImage, name, merchant, description } = product || {};
+  const [quantity, setQuantity] = useState(0);
+
+  const increaseQuantity = () =>
+    setQuantity((initialValue) => initialValue + 1);
+  const decreaseQuantity = () =>
+    setQuantity((initialValue) =>
+      initialValue === 0 ? initialValue : initialValue - 1
+    );
+
   return (
     <section className="product-item-details">
       <div className="product-item-details__image-container">
@@ -53,7 +63,11 @@ const ProductItemDetails: React.FC<Props> = ({ product }) => {
 
         <div className="product-item-details__cart">
           Qty
-          <Counter />
+          <Counter
+            count={quantity}
+            increaseCount={increaseQuantity}
+            decreaseCount={decreaseQuantity}
+          />
           <CustomButton onClick={() => console.log("clicked")}>
             Add to Cart
           </CustomButton>

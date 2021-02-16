@@ -13,9 +13,9 @@ export const handleCollectionUpdates = (
   collections: ProductsCollectionProps[],
   collectionUpdate: ProductsCollectionProps
 ): ProductsCollectionProps[] => {
-  if (!collections.length || !collectionUpdate) return collections;
-
   const { collectionName } = collectionUpdate;
+
+  if (!collections.length || !collectionUpdate) return collections;
 
   // Include the new update to an existing collection in collections array
   const updatedCollections = collections.map((collection) =>
