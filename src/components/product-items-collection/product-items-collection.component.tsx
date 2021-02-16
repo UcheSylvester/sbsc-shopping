@@ -11,8 +11,6 @@ const ProductItemsCollection: React.FC = () => {
         <ProductItem />
         <ProductItem />
         <ProductItem />
-        <ProductItem />
-        <ProductItem />
       </div>
     </section>
   );
