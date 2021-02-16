@@ -2,9 +2,7 @@ import thunk from "redux-thunk";
 import logger from "redux-logger";
 import { applyMiddleware, createStore } from "redux";
 // import { persistStore } from "redux-persist";
-import rootReducer, {
-  persistedReducer,
-} from "./products-collection/root.reducer";
+import rootReducer, { persistedReducer } from "./root.reducer";
 
 // Passing thunk as middleware for async actions
 const middleWares: any[] = [thunk];

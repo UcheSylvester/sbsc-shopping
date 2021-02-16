@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 import { persistReducer } from "redux-persist";
-import { ROOT_REDUX_PERSIST_KEY } from "../../utils/utils";
+import { ROOT_REDUX_PERSIST_KEY } from "../utils/utils";
 import storage from "redux-persist/lib/storage";
-import productsCollectionsReducer from "./products-collection.reducer";
-import { ProductsCollectionActionsTypes } from "./products-collection.types";
+import productsCollectionsReducer from "./products-collection/products-collection.reducer";
+import { ProductsCollectionActionsTypes } from "./products-collection/products-collection.types";
 
 // Basic config for setting up redux persist used for persisting the cart data
 const PERSIST_CONFIG = {

@@ -7,7 +7,7 @@ const ProductItemPage: React.FC = () => {
     <main className="product-item-page">
       <ProductItemDetails />
 
-      <ProductItemsCollection />
+      {/* <ProductItemsCollection /> */}
     </main>
   );
 };

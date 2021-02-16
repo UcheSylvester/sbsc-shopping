@@ -14,6 +14,12 @@ export type ProductItemTypes = {
   slug: string;
   tags: string[];
   description: Description;
+  productImage?: string;
+  brand?: string;
+  merchant: {
+    name: string;
+    email: string;
+  };
 };
 
 type Description = {
