@@ -12,6 +12,7 @@ const ProductItemDetails: React.FC = () => {
         <img
           src="https://image.shutterstock.com/image-photo/red-elegant-female-bag-two-260nw-1032419707.jpg"
           alt="product"
+          loading="lazy"
         />
       </div>
 
