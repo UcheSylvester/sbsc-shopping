@@ -39,7 +39,7 @@ const ProductItemPage: React.FC<Props> = ({
         product={productItem}
       />
 
-      <ProductItemsCollection name={collection} />
+      <ProductItemsCollection title="Similar Products" name={collection} />
     </main>
   );
 };

@@ -14,6 +14,7 @@ const ProductItemsWithState = WithState(ProductItems);
 
 type HomePageProps = {
   name: string;
+  title?: string;
 };
 
 type Props = HomePageProps & LinkDispatchProps & LinkStateProps;
@@ -22,6 +23,7 @@ const ProductItemsCollection: React.FC<Props> = ({
   name,
   fetchProductsCollectionStartAsync,
   collection,
+  title,
 }) => {
   const { products, isFetching, errorMessage } = collection || {};
 
@@ -31,11 +33,11 @@ const ProductItemsCollection: React.FC<Props> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // console.log({ collection });
-
   return (
     <section className="products-collection">
-      <h2 className="heading-secondary products-collection__title">{name}</h2>
+      <h2 className="heading-secondary products-collection__title">
+        {title || name}
+      </h2>
       <div className="products-collection__items">
         <ProductItemsWithState
           isLoading={isFetching}
