@@ -64,7 +64,12 @@ export const fetchProductsCollectionStartAsync = (query: string) => {
     } catch (error) {
       console.log({ error });
 
-      dispatch(fetchProductsCollectionFailure(query, error.message));
+      dispatch(
+        fetchProductsCollectionFailure(
+          query,
+          `An unexpected error occured, please try again :(`
+        )
+      );
     }
   };
 };
