@@ -47,7 +47,9 @@ const ProductItemDetails: React.FC = () => {
         <div className="product-item-details__cart">
           Qty
           <Counter />
-          <CustomButton>Add to Cart</CustomButton>
+          <CustomButton onClick={() => console.log("clicked")}>
+            Add to Cart
+          </CustomButton>
         </div>
 
         <p className="product-item-details__description">

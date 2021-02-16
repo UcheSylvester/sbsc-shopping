@@ -41,6 +41,7 @@ const ProductItemsCollection: React.FC<Props> = ({
           isLoading={isFetching}
           errorMessage={errorMessage}
           products={products}
+          handleRetry={() => fetchProductsCollectionStartAsync(name)}
         />
       </div>
     </section>
