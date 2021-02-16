@@ -2,8 +2,10 @@ import ProductRatings from "../product-ratings/product-ratings.component";
 import "./product-item-details.styles.scss";
 
 import { AiFillHeart } from "react-icons/ai";
+import Counter from "../counter/counter.component";
+import CustomButton from "../custom-button/custom-button.component";
 
-const ProductItemDetails = () => {
+const ProductItemDetails: React.FC = () => {
   return (
     <section className="product-item-details">
       <div className="product-item-details__image-container">
@@ -29,6 +31,29 @@ const ProductItemDetails = () => {
             <p className="product-item-details__likes-count">40,000 Likes</p>
           </div>
         </div>
+
+        <p className="product-item-details__likers">
+          Liked by batman, han solo and others
+        </p>
+
+        <div className="product-item-details__variations">
+          <input type="radio" value="large" id="size-large" />{" "}
+          <label htmlFor="size-large">Size L</label>
+          <input type="radio" value="medium" id="size-medium" />{" "}
+          <label htmlFor="size-medium">Size M</label>
+        </div>
+
+        <div className="product-item-details__cart">
+          Qty
+          <Counter />
+          <CustomButton>Add to Cart</CustomButton>
+        </div>
+
+        <p className="product-item-details__description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nulla
+          iusto exercitationem, vitae numquam possimus culpa aliquam impedit
+          voluptatem voluptate porro explicabo
+        </p>
       </div>
     </section>
   );

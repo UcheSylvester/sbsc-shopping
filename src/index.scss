@@ -3,10 +3,11 @@ body {
   --default-font-family: "Ubuntu", "sans-sarif";
   --default-font-size: 1.6rem;
   --default-box-shadow: 0 5px 5px -5px rgba(#000, 0.15);
-  --color-gray: #aaa;
+  --color-gray: #575656;
   --color-primary: rgb(255, 96, 46);
   --color-white: #fff;
   --color-black: #000;
+  --color-blue: rgb(67, 4, 240);
 }
 
 // FOR BASE STYLES
@@ -43,6 +44,8 @@ body {
 // GENERIC STYLES
 button {
   cursor: pointer;
+  background-color: var(--color-white);
+  border: none;
 }
 
 ul {

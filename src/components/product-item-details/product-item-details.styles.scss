@@ -1,51 +1,48 @@
 .product-item-details {
   display: flex;
-  border: 1px solid red;
   min-height: 50rem;
   flex-direction: column;
+  justify-content: space-between;
+  margin: 2rem 0;
 
   &__image-container {
-    border: 1px solid green;
     width: 100%;
 
     img {
       width: 100%;
       max-width: 100%;
-      border: 1px solid red;
       object-fit: contain;
-      // height: fit-content;
     }
   }
 
   &__info-container {
-    border: 1px solid blue;
     width: 100%;
     margin-top: 3rem;
-
-    div {
-      margin: 0.8rem 0;
-    }
   }
 
   &__title {
     text-transform: uppercase;
     font-size: 2.6rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   &__store-name {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
   }
 
   &__ratings-reviews,
   &__likes-avatars {
     display: flex;
     align-items: center;
-    border: 1px solid red;
     font-size: 1.3rem;
+    margin: 0.5rem 0;
+    color: var(--color-gray);
   }
 
   &__rating-reviews {
+    margin-top: 1rem;
+
     .product-ratings svg {
       font-size: 1.5rem;
     }
@@ -71,11 +68,52 @@
     margin-left: 1.5rem;
   }
 
+  &__likers {
+    font-size: 1.3rem;
+    margin-top: 0.7rem;
+    color: var(--color-gray);
+  }
+
+  &__variations {
+    margin: 2.5rem 0;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    color: var(--color-gray);
+
+    input {
+      margin-right: 0.7rem;
+    }
+
+    input,
+    label {
+      cursor: pointer;
+    }
+  }
+
+  &__cart {
+    display: flex;
+    align-items: center;
+    max-width: 25rem;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  #size-medium {
+    margin-left: 3rem;
+  }
+
+  &__description {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    text-align: justify;
+  }
+
   @media (min-width: 750px) {
     flex-direction: row;
 
     &__image-container {
-      max-width: 65%;
+      max-width: 60%;
     }
 
     &__info-container {
