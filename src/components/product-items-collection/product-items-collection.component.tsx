@@ -31,7 +31,7 @@ const ProductItemsCollection: React.FC<Props> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log({ collection });
+  // console.log({ collection });
 
   return (
     <section className="products-collection">
@@ -41,6 +41,7 @@ const ProductItemsCollection: React.FC<Props> = ({
           isLoading={isFetching}
           errorMessage={errorMessage}
           products={products}
+          collectionName={name}
           handleRetry={() => fetchProductsCollectionStartAsync(name)}
         />
       </div>

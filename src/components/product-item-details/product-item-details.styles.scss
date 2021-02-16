@@ -94,7 +94,6 @@
   &__cart {
     display: flex;
     align-items: center;
-    max-width: 25rem;
     width: 100%;
     justify-content: space-between;
   }
@@ -104,10 +103,9 @@
   }
 
   &__description {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-top: 2.5rem;
     text-align: justify;
-    max-width: 35rem;
     width: 100%;
   }
 
@@ -122,6 +120,14 @@
       max-width: 32%;
       margin-left: 4rem;
       margin-top: 0;
+    }
+
+    &__description {
+      max-width: 35rem;
+    }
+
+    &__cart {
+      max-width: 25rem;
     }
   }
 }

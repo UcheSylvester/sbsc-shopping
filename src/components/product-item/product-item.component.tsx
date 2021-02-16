@@ -7,17 +7,19 @@ import "./product-item.styles.scss";
 
 type Props = {
   productItem: ProductItemProps;
+  collectionName: string;
 };
 
-const ProductItem: React.FC<Props> = ({ productItem }) => {
+const ProductItem: React.FC<Props> = ({ productItem, collectionName }) => {
   const history = useHistory();
 
-  const { productImage, name, selling_price, merchant } = productItem || {};
+  const { productImage, name, selling_price, merchant, slug } =
+    productItem || {};
 
   return (
     <article
       className="product-item"
-      onClick={() => history.push("/bag/vintage_bag")}
+      onClick={() => history.push(`/${collectionName}/${slug}`)}
     >
       <img
         src={productImage || PLACEHOLDER_PRODUCT_IMAGE}

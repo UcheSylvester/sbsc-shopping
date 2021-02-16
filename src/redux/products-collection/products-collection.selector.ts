@@ -15,3 +15,24 @@ export const selectCollectionByName = (collectionName: string) =>
       (collection) => collection.collectionName === collectionName
     )
   );
+
+export const selectIsFetchingCollection = (collectionName: string) =>
+  createSelector(
+    [selectCollectionByName(collectionName)],
+    (collection) => collection?.isFetching
+  );
+
+export const selectCollectionErrorMessage = (collectionName: string) =>
+  createSelector(
+    [selectCollectionByName(collectionName)],
+    (collection) => collection?.errorMessage
+  );
+
+export const selectProduct = (collectionName: string, productSlug: string) =>
+  createSelector([selectCollectionByName(collectionName)], (collection) => {
+    if (!collection) return undefined;
+
+    return collection.products?.find(
+      (product) => product?.slug === productSlug
+    );
+  });

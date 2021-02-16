@@ -4,21 +4,28 @@ import "./product-item-details.styles.scss";
 import { AiFillHeart } from "react-icons/ai";
 import Counter from "../counter/counter.component";
 import CustomButton from "../custom-button/custom-button.component";
+import { ProductItemProps } from "../../redux/products-collection/products-collection.types";
+import { PLACEHOLDER_PRODUCT_IMAGE } from "../../utils/utils";
 
-const ProductItemDetails: React.FC = () => {
+type Props = {
+  product: ProductItemProps | undefined;
+};
+
+const ProductItemDetails: React.FC<Props> = ({ product }) => {
+  const { productImage, name, merchant, description } = product || {};
   return (
     <section className="product-item-details">
       <div className="product-item-details__image-container">
         <img
-          src="https://image.shutterstock.com/image-photo/red-elegant-female-bag-two-260nw-1032419707.jpg"
-          alt="product"
+          src={productImage || PLACEHOLDER_PRODUCT_IMAGE}
+          alt={name}
           loading="lazy"
         />
       </div>
 
       <div className="product-item-details__info-container">
-        <h2 className="product-item-details__title">Vintage Bag</h2>
-        <p className="product-item-details__store-name">Scrader store</p>
+        <h2 className="product-item-details__title">{name}</h2>
+        <p className="product-item-details__store-name">{merchant?.name} </p>
 
         <div className="product-item-details__ratings-reviews">
           <ProductRatings />
@@ -52,11 +59,10 @@ const ProductItemDetails: React.FC = () => {
           </CustomButton>
         </div>
 
-        <p className="product-item-details__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic nulla
-          iusto exercitationem, vitae numquam possimus culpa aliquam impedit
-          voluptatem voluptate porro explicabo
-        </p>
+        <p
+          className="product-item-details__description"
+          dangerouslySetInnerHTML={{ __html: description || "" }}
+        ></p>
       </div>
     </section>
   );

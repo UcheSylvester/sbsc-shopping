@@ -13,19 +13,13 @@ export type ProductItemTypes = {
   discount_price: number | null;
   slug: string;
   tags: string[];
-  description: Description;
+  description: string;
   productImage?: string;
   brand?: string;
   merchant: {
     name: string;
     email: string;
   };
-};
-
-type Description = {
-  value: string;
-  matchLevel: string;
-  matchedWords: string[];
 };
 
 export type ProductsCollectionProps = {

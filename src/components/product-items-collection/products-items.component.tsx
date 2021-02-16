@@ -3,12 +3,17 @@ import ProductItem from "../product-item/product-item.component";
 
 type Props = {
   products: ProductItemProps[];
+  collectionName: string;
 };
 
-const ProductItems: React.FC<Props> = ({ products }) => (
+const ProductItems: React.FC<Props> = ({ products, collectionName }) => (
   <>
     {products?.map((product) => (
-      <ProductItem key={product?._id} productItem={product} />
+      <ProductItem
+        collectionName={collectionName}
+        key={product?._id}
+        productItem={product}
+      />
     ))}
   </>
 );

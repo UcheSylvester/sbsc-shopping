@@ -3,7 +3,10 @@ import {
   ProductsCollectionActionsTypesEnum,
   ProductsCollectionProps,
 } from "./products-collection.types";
-import { handleCollectionUpdates } from "./products-collection.utils";
+import {
+  handleCollectionUpdates,
+  handleFetchCollectionStart,
+} from "./products-collection.utils";
 
 type ProductsCollectionsReducerTypes = {
   productsCollections: ProductsCollectionProps[];
@@ -21,7 +24,10 @@ const productsCollectionsReducer = (
     case ProductsCollectionActionsTypesEnum.FETCH_PRODUCTS_COLLECTION_START:
       return {
         ...state,
-        productsCollections: [...state.productsCollections, action.payload],
+        productsCollections: handleFetchCollectionStart(
+          state.productsCollections,
+          action.payload
+        ),
       };
 
     case ProductsCollectionActionsTypesEnum.FETCH_PRODUCTS_COLLECTION_SUCCESS:
