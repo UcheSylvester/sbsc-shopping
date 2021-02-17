@@ -9,13 +9,15 @@ import { AppStateTypes } from "../../redux/root.reducer";
 import { selectCartItemCount } from "../../redux/cart/cart.selector";
 import { connect } from "react-redux";
 
+import LogoImage from "../../assets/images/scrader.png";
+
 type Props = LinkStateProps;
 
 const Header: React.FC<Props> = ({ cartItemsCount }) => (
   <header className="header">
     <div className="header__brand-container">
       <Link className="header__logo" to="/">
-        LOGO
+        <img src={LogoImage} alt="Scrader logo" />
       </Link>
 
       <h1 className="heading-primary">Acme Store</h1>
