@@ -32,7 +32,6 @@ function App() {
         newestOnTop={false}
         closeOnClick
       />
-      {/* Same as */}
       <ToastContainer />
     </>
   );
