@@ -49,8 +49,6 @@ export const fetchProductsCollectionStartAsync = (query: string) => {
         endpoint: `search?q=${query}`,
       });
 
-      console.log(data);
-
       const { result } = data || {};
 
       const collection: ProductsCollectionProps = {
@@ -62,8 +60,6 @@ export const fetchProductsCollectionStartAsync = (query: string) => {
 
       dispatch(fetchProductsCollectionSuccess(collection));
     } catch (error) {
-      console.log({ error });
-
       dispatch(
         fetchProductsCollectionFailure(
           query,
