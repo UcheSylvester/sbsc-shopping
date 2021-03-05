@@ -9,7 +9,7 @@ export const handleCollectionUpdates = (
 
   if (!collections.length || !collectionUpdate) return collections;
 
-  // Include the new update to an existing collection in collections array
+  // Include the new update to an existing collection
   const updatedCollections = collections.map((collection) =>
     collection.collectionName === collectionName
       ? {

@@ -9,7 +9,8 @@ import { selectCollectionByName } from "../../redux/products-collection/products
 import WithState from "../../HOCs/with-state.hoc";
 import ProductItems from "./products-items.component";
 
-// Controlling loading and error states using WithState Higher Order Component (HOC)
+// Controlling loading and error states using WithState
+// Higher Order Component (HOC)
 const ProductItemsWithState = WithState(ProductItems);
 
 type HomePageProps = {
@@ -28,6 +29,8 @@ const ProductItemsCollection: React.FC<Props> = ({
   const { products, isFetching, errorMessage } = collection || {};
 
   useEffect(() => {
+    // Fetch products collections only when the collection
+    // is not existing.
     if (!collection) fetchProductsCollectionStartAsync(name);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps

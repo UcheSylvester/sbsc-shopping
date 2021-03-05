@@ -1,7 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { ProductItemProps } from "../../redux/products-collection/products-collection.types";
 import { formatter, PLACEHOLDER_PRODUCT_IMAGE } from "../../utils/utils";
-import ProductRatings from "../product-ratings/product-ratings.component";
 
 import "./product-item.styles.scss";
 
@@ -32,7 +31,7 @@ const ProductItem: React.FC<Props> = ({ productItem, collectionName }) => {
         <div className="product-item__details--top">
           <h3 className="heading-tertiary">{name}</h3>
 
-          <ProductRatings />
+          {/* <ProductRatings /> */}
         </div>
 
         <div className="product-item__details--bottom">

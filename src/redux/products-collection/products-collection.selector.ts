@@ -36,3 +36,8 @@ export const selectProduct = (collectionName: string, productSlug: string) =>
       (product) => product?.slug === productSlug
     );
   });
+
+export const selectAllIsFetching = createSelector(
+  [selectCollections],
+  (collecitons) => collecitons.some((collection) => collection.isFetching)
+);
