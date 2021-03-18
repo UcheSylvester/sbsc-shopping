@@ -7,6 +7,7 @@ import { createStructuredSelector } from "reselect";
 import { AppStateTypes } from "../../redux/root.reducer";
 import { selectCartItemCount } from "../../redux/cart/cart.selector";
 import { connect } from "react-redux";
+import LogoImage from "../../assets/images/logo.png";
 
 import React from "react";
 
@@ -24,10 +25,7 @@ const Header: React.FC<Props> = ({ cartItemsCount }: Props) => {
       </Link>
 
       <Link className="header__logo" to="/">
-        <img
-          src={"http://www.sbsc.com/wp-content/uploads/2017/01/logo-1.png"}
-          alt="Brand logo"
-        />
+        <img src={LogoImage} alt="Brand logo" />
       </Link>
 
       <CustomIcon count={cartItemsCount} onClick={() => history.push(`/cart`)}>
