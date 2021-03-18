@@ -25,15 +25,13 @@ const ProductItemsCollection: React.FC<Props> = ({
   fetchProductsCollectionStartAsync,
   collection,
   title,
-}) => {
+}: Props) => {
   const { products, isFetching, errorMessage } = collection || {};
 
   useEffect(() => {
     // Fetch products collections only when the collection
     // is not existing.
     if (!collection) fetchProductsCollectionStartAsync(name);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -65,13 +63,13 @@ type LinkStateProps = {
 const mapDispatchToProps = (dispatch: Dispatch): LinkDispatchProps => ({
   fetchProductsCollectionStartAsync: bindActionCreators(
     fetchProductsCollectionStartAsync,
-    dispatch
+    dispatch,
   ),
 });
 
 const mapStateToProps = (
   state: AppStateTypes,
-  props: HomePageProps
+  props: HomePageProps,
 ): LinkStateProps => {
   const { name } = props;
 
@@ -82,5 +80,5 @@ const mapStateToProps = (
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(ProductItemsCollection);

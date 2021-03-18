@@ -9,7 +9,10 @@ type Props = {
   collectionName: string;
 };
 
-const ProductItem: React.FC<Props> = ({ productItem, collectionName }) => {
+const ProductItem: React.FC<Props> = ({
+  productItem,
+  collectionName,
+}: Props) => {
   const history = useHistory();
 
   const { productImage, name, selling_price, merchant, slug } =

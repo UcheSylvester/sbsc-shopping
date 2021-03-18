@@ -2,15 +2,8 @@ import ProductItemsCollection from "../../components/product-items-collection/pr
 import "./homepage.styles.scss";
 import { PRODUCTS_COLLECTION_NAMES } from "../../utils/utils";
 import ProductsSlides from "../../components/products-slides/products-slides.component";
-import { createStructuredSelector } from "reselect";
-import { connect } from "react-redux";
-import { selectAllIsFetching } from "../../redux/products-collection/products-collection.selector";
-import { AppStateTypes } from "../../redux/root.reducer";
 
-type Props = LinkStateProps;
-
-const HomePage: React.FC<Props> = ({ isLoading }) => {
-  console.log({ isLoading });
+const HomePage: React.FC = () => {
   return (
     <main className="homepage">
       <ProductsSlides />
@@ -22,14 +15,4 @@ const HomePage: React.FC<Props> = ({ isLoading }) => {
   );
 };
 
-type LinkStateProps = {
-  isLoading: boolean;
-};
-
-const mapStateToProps = createStructuredSelector<AppStateTypes, LinkStateProps>(
-  {
-    isLoading: selectAllIsFetching,
-  }
-);
-
-export default connect(mapStateToProps)(HomePage);
+export default HomePage;

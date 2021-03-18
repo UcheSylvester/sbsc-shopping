@@ -6,7 +6,7 @@ type Props = {
   handleButtonClick: () => void;
 };
 
-const MessageBox: React.FC<Props> = ({ message, handleButtonClick }) => {
+const MessageBox: React.FC<Props> = ({ message, handleButtonClick }: Props) => {
   return (
     <div className="message-box">
       <p className="message-box__message">{message}</p>

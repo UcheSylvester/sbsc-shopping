@@ -16,7 +16,7 @@ type Props = {
   product: ProductItemProps | undefined;
 };
 
-const ProductItemDetails: React.FC<Props> = ({ product }) => {
+const ProductItemDetails: React.FC<Props> = ({ product }: Props) => {
   const dispatch = useDispatch();
   const { pathname } = useLocation();
 
@@ -29,7 +29,7 @@ const ProductItemDetails: React.FC<Props> = ({ product }) => {
     setQuantity((initialValue) => initialValue + 1);
   const decreaseQuantity = () =>
     setQuantity((initialValue) =>
-      initialValue === 0 ? initialValue : initialValue - 1
+      initialValue === 0 ? initialValue : initialValue - 1,
     );
 
   useEffect(() => {

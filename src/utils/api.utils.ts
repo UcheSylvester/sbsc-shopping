@@ -15,18 +15,18 @@ export const getHeaders = (headerOptions?: HeaderOptions) => {
 };
 
 export const handleRequest = async (options: any) => {
+  const { body, endpoint, ...otherOptions } = options;
+
+  const axiosConfig = {
+    url: `${BASE_URL}/${endpoint}`,
+    headers: {
+      Accept: "application/json",
+    },
+    ...(body && { data: body }),
+    ...otherOptions,
+  };
+
   try {
-    const { body, endpoint, ...otherOptions } = options;
-
-    const axiosConfig = {
-      url: `${BASE_URL}/${endpoint}`,
-      headers: {
-        Accept: "application/json",
-      },
-      ...(body && { data: body }),
-      ...otherOptions,
-    };
-
     const response = await Axios(axiosConfig);
 
     const { data } = response.data || {};

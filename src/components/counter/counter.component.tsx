@@ -7,7 +7,11 @@ type Props = {
   decreaseCount: () => void;
 };
 
-const Counter: React.FC<Props> = ({ count, increaseCount, decreaseCount }) => (
+const Counter: React.FC<Props> = ({
+  count,
+  increaseCount,
+  decreaseCount,
+}: Props) => (
   <div className="counter">
     <div className="counter__count">{count}</div>
 

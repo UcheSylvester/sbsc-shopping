@@ -18,7 +18,7 @@ const INITIAL_STATE: ProductsCollectionsReducerTypes = {
 
 const productsCollectionsReducer = (
   state = INITIAL_STATE,
-  action: ProductsCollectionActionsTypes
+  action: ProductsCollectionActionsTypes,
 ): ProductsCollectionsReducerTypes => {
   switch (action.type) {
     case ProductsCollectionActionsTypesEnum.FETCH_PRODUCTS_COLLECTION_START:
@@ -26,7 +26,7 @@ const productsCollectionsReducer = (
         ...state,
         productsCollections: handleFetchCollectionStart(
           state.productsCollections,
-          action.payload
+          action.payload,
         ),
       };
 
@@ -36,7 +36,7 @@ const productsCollectionsReducer = (
         ...state,
         productsCollections: handleCollectionUpdates(
           state.productsCollections,
-          action.payload
+          action.payload,
         ),
       };
 

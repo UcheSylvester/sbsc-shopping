@@ -21,8 +21,8 @@ function App() {
     <>
       <Header />
 
-      {BaseRoutes.map((route) => (
-        <Route {...route} />
+      {BaseRoutes.map(({ key, ...otherProps }) => (
+        <Route key={key} {...otherProps} />
       ))}
 
       <ToastContainer

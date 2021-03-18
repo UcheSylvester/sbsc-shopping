@@ -16,7 +16,7 @@ SwiperCore.use([Pagination, EffectFade, Autoplay]);
 
 type Props = LinkStateProps;
 
-const ProductsSlides: React.FC<Props> = ({ collection }) => {
+const ProductsSlides: React.FC<Props> = ({ collection }: Props) => {
   const { isFetching, products } = collection || {};
 
   console.log({ products });

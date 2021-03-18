@@ -3,28 +3,26 @@ import { ProductsCollectionProps } from "./products-collection.types";
 
 export const handleCollectionUpdates = (
   collections: ProductsCollectionProps[],
-  collectionUpdate: ProductsCollectionProps
+  collectionUpdate: ProductsCollectionProps,
 ): ProductsCollectionProps[] => {
   const { collectionName } = collectionUpdate;
 
   if (!collections.length || !collectionUpdate) return collections;
 
   // Include the new update to an existing collection
-  const updatedCollections = collections.map((collection) =>
+  return collections.map((collection) =>
     collection.collectionName === collectionName
       ? {
           ...collection,
           ...collectionUpdate,
         }
-      : collection
+      : collection,
   );
-
-  return updatedCollections;
 };
 
 export const handleFetchCollectionStart = (
   collections: ProductsCollectionProps[],
-  newCollection: ProductsCollectionProps
+  newCollection: ProductsCollectionProps,
 ) => {
   const { collectionName } = newCollection;
   const existingCollection = findExistingItem({
@@ -39,6 +37,6 @@ export const handleFetchCollectionStart = (
   return collections.map((collection) =>
     collection.collectionName === collectionName
       ? { ...collection, ...newCollection }
-      : collection
+      : collection,
   );
 };

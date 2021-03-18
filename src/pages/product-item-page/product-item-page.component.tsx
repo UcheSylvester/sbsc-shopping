@@ -28,7 +28,7 @@ const ProductItemPage: React.FC<Props> = ({
   productItem,
   isLoading,
   collectionErrorMessage,
-}) => {
+}: Props) => {
   const { collection } = match.params;
 
   return (
@@ -52,7 +52,7 @@ type LinkStateProps = {
 
 const mapStateToProps = (
   state: AppStateTypes,
-  ownProps: ProductItemPageProps
+  ownProps: ProductItemPageProps,
 ): LinkStateProps => {
   const { collection, product_slug } = ownProps.match.params;
 

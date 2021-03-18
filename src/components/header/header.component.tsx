@@ -13,7 +13,7 @@ import LogoImage from "../../assets/images/scrader.png";
 
 type Props = LinkStateProps;
 
-const Header: React.FC<Props> = ({ cartItemsCount }) => (
+const Header: React.FC<Props> = ({ cartItemsCount }: Props) => (
   <header className="header">
     <div className="header__brand-container">
       <Link className="header__logo" to="/">
@@ -42,7 +42,7 @@ type LinkStateProps = {
 const mapStateToProps = createStructuredSelector<AppStateTypes, LinkStateProps>(
   {
     cartItemsCount: selectCartItemCount,
-  }
+  },
 );
 
 export default connect(mapStateToProps)(Header);

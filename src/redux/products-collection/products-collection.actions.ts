@@ -9,7 +9,7 @@ import {
 } from "./products-collection.types";
 
 export const fetchProductsCollectionStart = (
-  collectionName: string
+  collectionName: string,
 ): FetchProductsCollectionStart => ({
   type: ProductsCollectionActionsTypesEnum.FETCH_PRODUCTS_COLLECTION_START,
   payload: {
@@ -21,7 +21,7 @@ export const fetchProductsCollectionStart = (
 });
 
 export const fetchProductsCollectionSuccess = (
-  collection: ProductsCollectionProps
+  collection: ProductsCollectionProps,
 ): FetchProductsCollectionSuccess => ({
   type: ProductsCollectionActionsTypesEnum.FETCH_PRODUCTS_COLLECTION_SUCCESS,
   payload: collection,
@@ -29,7 +29,7 @@ export const fetchProductsCollectionSuccess = (
 
 export const fetchProductsCollectionFailure = (
   collectionName: string,
-  errorMessage: string
+  errorMessage: string,
 ): FetchProductsCollectionFailure => ({
   type: ProductsCollectionActionsTypesEnum.FETCH_PRODUCTS_COLLECTION_FAILURE,
   payload: {
@@ -63,8 +63,8 @@ export const fetchProductsCollectionStartAsync = (query: string) => {
       dispatch(
         fetchProductsCollectionFailure(
           query,
-          `An unexpected error occured, please try again :(`
-        )
+          `An unexpected error occured, please try again :(`,
+        ),
       );
     }
   };

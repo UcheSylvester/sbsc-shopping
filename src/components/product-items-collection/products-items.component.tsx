@@ -6,7 +6,7 @@ type Props = {
   collectionName: string;
 };
 
-const ProductItems: React.FC<Props> = ({ products, collectionName }) => (
+const ProductItems: React.FC<Props> = ({ products, collectionName }: Props) => (
   <>
     {products?.map((product) => (
       <ProductItem

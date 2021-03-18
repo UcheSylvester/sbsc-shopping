@@ -7,14 +7,14 @@ import {
 } from "./cart.types";
 
 export const updateCartItem = (
-  cartItemToAdd: CartItemProps
+  cartItemToAdd: CartItemProps,
 ): UpdateCartItem => ({
   type: CartActionsTypesEnums.UPDATE_CART_ITEM,
   payload: cartItemToAdd,
 });
 
 export const clearCartItem = (
-  cartItemToClear: CartItemProps
+  cartItemToClear: CartItemProps,
 ): ClearCartItem => ({
   type: CartActionsTypesEnums.CLEAR_CART_ITEM,
   payload: cartItemToClear,

@@ -6,26 +6,26 @@ export const selectCollectionsReducer = (state: AppStateTypes) =>
 
 export const selectCollections = createSelector(
   [selectCollectionsReducer],
-  (collectionsReducer) => collectionsReducer.productsCollections
+  (collectionsReducer) => collectionsReducer.productsCollections,
 );
 
 export const selectCollectionByName = (collectionName: string) =>
   createSelector([selectCollections], (collections) =>
     collections.find(
-      (collection) => collection.collectionName === collectionName
-    )
+      (collection) => collection.collectionName === collectionName,
+    ),
   );
 
 export const selectIsFetchingCollection = (collectionName: string) =>
   createSelector(
     [selectCollectionByName(collectionName)],
-    (collection) => collection?.isFetching
+    (collection) => collection?.isFetching,
   );
 
 export const selectCollectionErrorMessage = (collectionName: string) =>
   createSelector(
     [selectCollectionByName(collectionName)],
-    (collection) => collection?.errorMessage
+    (collection) => collection?.errorMessage,
   );
 
 export const selectProduct = (collectionName: string, productSlug: string) =>
@@ -33,11 +33,11 @@ export const selectProduct = (collectionName: string, productSlug: string) =>
     if (!collection) return undefined;
 
     return collection.products?.find(
-      (product) => product?.slug === productSlug
+      (product) => product?.slug === productSlug,
     );
   });
 
 export const selectAllIsFetching = createSelector(
   [selectCollections],
-  (collecitons) => collecitons.some((collection) => collection.isFetching)
+  (collecitons) => collecitons.some((collection) => collection.isFetching),
 );

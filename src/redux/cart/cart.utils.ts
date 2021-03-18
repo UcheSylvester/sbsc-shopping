@@ -3,7 +3,7 @@ import { CartItemProps } from "./cart.types";
 
 export const onUpdateCartItem = (
   cartItems: CartItemProps[],
-  cartItemToAdd: CartItemProps
+  cartItemToAdd: CartItemProps,
 ) => {
   const { _id } = cartItemToAdd;
 
@@ -24,6 +24,6 @@ export const onUpdateCartItem = (
           ...cartItem,
           quantity: cartItemToAdd.quantity,
         }
-      : cartItem
+      : cartItem,
   );
 };
