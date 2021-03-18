@@ -4,6 +4,7 @@ import CustomButton from "../custom-button/custom-button.component";
 import { RiDeleteBinLine } from "react-icons/ri";
 import Counter from "../counter/counter.component";
 import { CartItemProps } from "../../redux/cart/cart.types";
+import { Link } from "react-router-dom";
 import {
   formatter,
   PLACEHOLDER_PRODUCT_IMAGE,
@@ -24,8 +25,15 @@ type Props = {
 const CartItem: React.FC<Props> = ({ cartItem }: Props) => {
   const dispatch = useDispatch();
 
-  const { productImage, name, selling_price, quantity, description } =
-    cartItem || {};
+  const {
+    productImage,
+    name,
+    selling_price,
+    quantity,
+    description,
+    slug,
+    collection,
+  } = cartItem || {};
 
   return (
     <div className="cart-item">
@@ -37,7 +45,9 @@ const CartItem: React.FC<Props> = ({ cartItem }: Props) => {
 
       <div className="cart-item__details">
         <div className="cart-item__header">
-          <h3 className="heading-tertiary">{name}</h3>
+          <Link to={`/${collection}/${slug}`}>
+            <h3 className="heading-tertiary">{name}</h3>
+          </Link>
 
           <p className="cart-item__quantity-selling-price">
             {quantity} x {formatter(selling_price)}
@@ -56,7 +66,7 @@ const CartItem: React.FC<Props> = ({ cartItem }: Props) => {
 
         <div className="cart-item__footer">
           <CustomButton onClick={() => dispatch(clearCartItem(cartItem))}>
-            <RiDeleteBinLine /> Remove
+            <RiDeleteBinLine /> <span>Remove</span>
           </CustomButton>
 
           <Counter

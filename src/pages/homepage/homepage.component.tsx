@@ -3,16 +3,12 @@ import "./homepage.styles.scss";
 import { PRODUCTS_COLLECTION_NAMES } from "../../utils/utils";
 import React from "react";
 
-const HomePage: React.FC = () => {
-  return (
-    <main className="homepage">
-      {/*<ProductsSlides />*/}
-
-      {PRODUCTS_COLLECTION_NAMES.map((name) => (
-        <ProductItemsCollection key={name} name={name} />
-      ))}
-    </main>
-  );
-};
+const HomePage: React.FC = () => (
+  <main className="homepage">
+    {PRODUCTS_COLLECTION_NAMES.map((name) => (
+      <ProductItemsCollection key={name} name={name} />
+    ))}
+  </main>
+);
 
 export default HomePage;

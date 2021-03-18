@@ -10,6 +10,7 @@ export enum CartActionsTypesEnums {
 
 export type CartItemProps = {
   quantity: number;
+  collection: string;
 } & ProductItemProps;
 
 export type AddCartItem = {

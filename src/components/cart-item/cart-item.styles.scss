@@ -11,9 +11,14 @@
     object-fit: contain;
   }
 
+  a {
+    text-decoration: none;
+    color: var(--color-black)
+  }
+
   &__details {
     flex: 1;
-    margin-left: 3rem;
+    margin-left: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -35,13 +40,16 @@
 
   &__quantity-selling-price {
     font-size: 1.5rem;
-    color: var(--color-gray)
+    color: var(--color-gray);
+    display: none;
   }
 
   &__description {
-    margin: 2rem 0;
+    margin: 2.5rem 0;
     color: var(--color-gray);
     font-size: 1.55rem;
+    display: none;
+
   }
 
   .custom-button {
@@ -54,8 +62,12 @@
     margin-top: auto;
     font-size: 1.5rem;
     padding: 0 0.5rem 0.5rem;
-    border-bottom: 1.5px solid var(--color-gray-light);
+    border-bottom: none;
     border-radius: 0;
+
+    span {
+      display: none;
+    }
 
     svg {
       margin-right: 1.7rem;
@@ -63,4 +75,25 @@
     }
   }
 
+  @media(min-width: 550px) {
+    &__details {
+      margin-left: 3rem;
+    }
+
+    &__description {
+      display: block;
+    }
+
+    &__quantity-selling-price {
+      display: block;
+    }
+
+    .custom-button  {
+      border-bottom: 1.5px solid var(--color-gray-light);
+
+      span {
+        display: inline;
+      }
+    }
+  }
 }

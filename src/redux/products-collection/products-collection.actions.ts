@@ -45,6 +45,7 @@ export const fetchProductsCollectionStartAsync = (query: string) => {
     dispatch(fetchProductsCollectionStart(query));
 
     try {
+      // Get products using the query string passed (ie collection name)
       const data = await handleRequest({
         endpoint: `search?q=${query}`,
       });
@@ -63,7 +64,7 @@ export const fetchProductsCollectionStartAsync = (query: string) => {
       dispatch(
         fetchProductsCollectionFailure(
           query,
-          `An unexpected error occured, please try again :(`,
+          `An unexpected error occurred, please try again :(`,
         ),
       );
     }

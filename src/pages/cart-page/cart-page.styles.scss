@@ -1,9 +1,11 @@
 .cart-page {
-  border: 1px solid red;
   display: flex;
-  max-width: 110rem;
+  max-width: 120rem;
   width: 100%;
-  margin: 10rem auto;
+  margin: 12rem auto;
   flex-direction: row;
 
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 }

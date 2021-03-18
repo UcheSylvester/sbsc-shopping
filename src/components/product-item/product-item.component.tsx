@@ -26,10 +26,12 @@ const ProductItem: React.FC<Props> = ({
   const { productImage, name, selling_price, merchant, slug } =
     productItem || {};
 
-  const handleUpdateCartItem = (event: Event) => {
+  const cartItem = { ...productItem, collection: collectionName };
+
+  const handleAddCartItem = (event: Event) => {
     event.stopPropagation();
 
-    dispatch(addCartItem(productItem as CartItemProps));
+    dispatch(addCartItem(cartItem as CartItemProps));
     toast("Item added to cart successfully!", {
       position: "bottom-center",
     });
@@ -51,7 +53,7 @@ const ProductItem: React.FC<Props> = ({
         <div className="product-item__details--top">
           <h3 className="heading-tertiary">{name}</h3>
 
-          <CustomIcon onClick={handleUpdateCartItem}>
+          <CustomIcon onClick={handleAddCartItem}>
             <MdAddShoppingCart />
           </CustomIcon>
         </div>

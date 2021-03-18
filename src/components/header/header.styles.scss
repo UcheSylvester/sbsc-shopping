@@ -16,9 +16,13 @@
     margin-right: 0;
   }
 
+  a {
+    text-decoration: none;
+    color: var(--color-black)
+  }
+
   &__logo {
     width: 9.5rem;
-    text-decoration: none;
     margin: 0 1rem;
 
     img {

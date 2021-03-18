@@ -8,7 +8,9 @@ import { useDispatch } from "react-redux";
 import { addCartItem } from "../../redux/cart/cart.actions";
 import { toast } from "react-toastify";
 import { CartItemProps } from "../../redux/cart/cart.types";
-import { useHistory } from "react-router-dom";
+import { useHistory, useRouteMatch } from "react-router-dom";
+
+type TParams = { collection: string };
 
 type Props = {
   product: ProductItemProps | undefined;
@@ -17,11 +19,16 @@ type Props = {
 const ProductItemDetails: React.FC<Props> = ({ product }: Props) => {
   const dispatch = useDispatch();
   const history = useHistory();
+  const match = useRouteMatch<TParams>();
+
+  const { collection } = match.params;
 
   const { productImage, name, merchant, description } = product || {};
 
+  const cartItem = { ...product, collection };
+
   const handleUpdateCartItem = () => {
-    dispatch(addCartItem(product as CartItemProps));
+    dispatch(addCartItem(cartItem as CartItemProps));
     toast("Item added to cart successfully!", {
       position: "bottom-center",
     });

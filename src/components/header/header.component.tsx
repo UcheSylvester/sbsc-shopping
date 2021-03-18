@@ -17,9 +17,11 @@ const Header: React.FC<Props> = ({ cartItemsCount }: Props) => {
 
   return (
     <header className="header">
-      <h1 className="heading-primary">
-        SBSC <br /> Shopping
-      </h1>
+      <Link to="/">
+        <h1 className="heading-primary">
+          SBSC <br /> Shopping
+        </h1>
+      </Link>
 
       <Link className="header__logo" to="/">
         <img

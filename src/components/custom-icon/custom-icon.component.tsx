@@ -15,7 +15,6 @@ const CustomIcon: React.FC<CustomIconProps> = ({
   <div className="custom-icon" role={"button"} {...otherProps}>
     {children}
     {count === 0 || count ? (
-      // <div className="custom-icon__count">{count > 9 ? `9+` : count}</div>
       <div className="custom-icon__count">{count}</div>
     ) : null}
   </div>
