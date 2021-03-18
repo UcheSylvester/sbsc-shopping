@@ -21,6 +21,7 @@ function App() {
     <>
       <Header />
 
+      {/*Defining routes as array to help keep component clean and DRY*/}
       {BaseRoutes.map(({ key, ...otherProps }) => (
         <Route key={key} {...otherProps} />
       ))}

@@ -16,7 +16,7 @@ const usePayment = ({ amount }: UsePaymentProps) => {
     tx_ref: `${Date.now()}`,
     amount,
     currency: "NGN",
-    payment_options: "card,mobilemoney,ussd,paypal",
+    payment_options: "card, ussd, mobilemoney, paypal",
     customer: {
       email: "user@gmail.com",
       phonenumber: "07064586146",
