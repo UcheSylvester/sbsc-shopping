@@ -1,5 +1,6 @@
 import { ProductItemProps } from "../../redux/products-collection/products-collection.types";
 import ProductItem from "../product-item/product-item.component";
+import React from "react";
 
 type Props = {
   products: ProductItemProps[];

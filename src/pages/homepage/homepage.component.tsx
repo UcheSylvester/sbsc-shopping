@@ -1,12 +1,12 @@
 import ProductItemsCollection from "../../components/product-items-collection/product-items-collection.component";
 import "./homepage.styles.scss";
 import { PRODUCTS_COLLECTION_NAMES } from "../../utils/utils";
-import ProductsSlides from "../../components/products-slides/products-slides.component";
+import React from "react";
 
 const HomePage: React.FC = () => {
   return (
     <main className="homepage">
-      <ProductsSlides />
+      {/*<ProductsSlides />*/}
 
       {PRODUCTS_COLLECTION_NAMES.map((name) => (
         <ProductItemsCollection key={name} name={name} />

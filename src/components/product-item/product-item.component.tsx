@@ -3,6 +3,7 @@ import { ProductItemProps } from "../../redux/products-collection/products-colle
 import { formatter, PLACEHOLDER_PRODUCT_IMAGE } from "../../utils/utils";
 
 import "./product-item.styles.scss";
+import React from "react";
 
 type Props = {
   productItem: ProductItemProps;

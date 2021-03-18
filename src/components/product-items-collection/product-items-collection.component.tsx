@@ -3,7 +3,7 @@ import "./product-items-collection.styles.scss";
 import { fetchProductsCollectionStartAsync } from "../../redux/products-collection/products-collection.actions";
 import { connect } from "react-redux";
 import { bindActionCreators, Dispatch } from "redux";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { AppStateTypes } from "../../redux/root.reducer";
 import { selectCollectionByName } from "../../redux/products-collection/products-collection.selector";
 import WithState from "../../HOCs/with-state.hoc";
