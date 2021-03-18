@@ -1,6 +1,8 @@
 import { ProductItemProps } from "../products-collection/products-collection.types";
 
 export enum CartActionsTypesEnums {
+  ADD_CART_ITEM = "ADD_CART_ITEM",
+  REMOVE_CART_ITEM = "REMOVE_CART_ITEM",
   UPDATE_CART_ITEM = "UPDATE_CART_ITEM",
   CLEAR_CART_ITEM = "CLEAR_CART_ITEM",
   CLEAR_ENTIRE_CART = "CLEAR_ENTIRE_CART",
@@ -9,6 +11,16 @@ export enum CartActionsTypesEnums {
 export type CartItemProps = {
   quantity: number;
 } & ProductItemProps;
+
+export type AddCartItem = {
+  type: CartActionsTypesEnums.ADD_CART_ITEM;
+  payload: CartItemProps;
+};
+
+export type RemoveCartItem = {
+  type: CartActionsTypesEnums.REMOVE_CART_ITEM;
+  payload: CartItemProps;
+};
 
 export type UpdateCartItem = {
   type: CartActionsTypesEnums.UPDATE_CART_ITEM;
@@ -24,4 +36,9 @@ export type ClearEntireCart = {
   type: CartActionsTypesEnums.CLEAR_ENTIRE_CART;
 };
 
-export type CartActionsTypes = UpdateCartItem | ClearCartItem | ClearEntireCart;
+export type CartActionsTypes =
+  | AddCartItem
+  | RemoveCartItem
+  | UpdateCartItem
+  | ClearCartItem
+  | ClearEntireCart;

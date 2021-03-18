@@ -11,6 +11,7 @@ import { AppStateTypes } from "../../redux/root.reducer";
 import "./product-item-page.styles.scss";
 import { ProductItemProps } from "../../redux/products-collection/products-collection.types";
 import WithState from "../../HOCs/with-state.hoc";
+import React from "react";
 
 const ProductItemDetailsWithState = WithState(ProductItemDetails);
 

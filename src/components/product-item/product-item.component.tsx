@@ -4,6 +4,12 @@ import { formatter, PLACEHOLDER_PRODUCT_IMAGE } from "../../utils/utils";
 
 import "./product-item.styles.scss";
 import React from "react";
+import CustomIcon from "../custom-icon/custom-icon.component";
+import { MdAddShoppingCart } from "react-icons/md";
+import { addCartItem } from "../../redux/cart/cart.actions";
+import { CartItemProps } from "../../redux/cart/cart.types";
+import { toast } from "react-toastify";
+import { useDispatch } from "react-redux";
 
 type Props = {
   productItem: ProductItemProps;
@@ -15,9 +21,19 @@ const ProductItem: React.FC<Props> = ({
   collectionName,
 }: Props) => {
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const { productImage, name, selling_price, merchant, slug } =
     productItem || {};
+
+  const handleUpdateCartItem = (event: Event) => {
+    event.stopPropagation();
+
+    dispatch(addCartItem(productItem as CartItemProps));
+    toast("Item added to cart successfully!", {
+      position: "bottom-center",
+    });
+  };
 
   return (
     <article
@@ -35,7 +51,9 @@ const ProductItem: React.FC<Props> = ({
         <div className="product-item__details--top">
           <h3 className="heading-tertiary">{name}</h3>
 
-          {/* <ProductRatings /> */}
+          <CustomIcon onClick={handleUpdateCartItem}>
+            <MdAddShoppingCart />
+          </CustomIcon>
         </div>
 
         <div className="product-item__details--bottom">

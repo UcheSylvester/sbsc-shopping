@@ -23,7 +23,7 @@
   &__title {
     text-transform: uppercase;
     font-size: 2.6rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
 
   &__store-name {
@@ -31,76 +31,22 @@
     margin-bottom: 2rem;
   }
 
-  &__ratings-reviews,
-  &__likes-avatars {
-    display: flex;
-    align-items: center;
-    font-size: 1.3rem;
-    margin: 0.5rem 0;
-    color: var(--color-gray);
-  }
+  &__buttons {
+    margin: 5rem 0;
 
-  &__rating-reviews {
-    margin-top: 1rem;
+    .custom-button {
+      width: 100%;
+      height: 6rem;
 
-    .product-ratings svg {
-      font-size: 1.5rem;
+      &:last-child {
+        background-color: white;
+        border: 1px solid var(--color-primary);
+        color: var(--color-primary);
+        margin-top: 1.6rem;
+      }
     }
   }
 
-  &__likes {
-    display: flex;
-    align-items: center;
-
-    svg {
-      fill: var(--color-primary);
-      font-size: 1.9rem;
-    }
-
-    &-count {
-      margin-left: 0.5rem;
-      word-spacing: 0.3rem;
-      letter-spacing: 0.1rem;
-    }
-  }
-
-  &__reviews {
-    margin-left: 1.5rem;
-  }
-
-  &__likers {
-    font-size: 1.3rem;
-    margin-top: 0.7rem;
-    color: var(--color-gray);
-  }
-
-  &__variations {
-    margin: 2.5rem 0;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    color: var(--color-gray);
-
-    input {
-      margin-right: 0.7rem;
-    }
-
-    input,
-    label {
-      cursor: pointer;
-    }
-  }
-
-  &__cart {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  #size-medium {
-    margin-left: 3rem;
-  }
 
   &__description {
     font-size: 1.6rem;
@@ -118,7 +64,7 @@
 
     &__info-container {
       max-width: 32%;
-      margin-left: 4rem;
+      margin-left: 3rem;
       margin-top: 0;
     }
 
@@ -126,8 +72,5 @@
       max-width: 35rem;
     }
 
-    &__cart {
-      max-width: 25rem;
-    }
   }
 }

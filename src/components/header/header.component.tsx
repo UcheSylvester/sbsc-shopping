@@ -1,5 +1,4 @@
 import { RiShoppingCartLine } from "react-icons/ri";
-import { BiSearch } from "react-icons/bi";
 
 import CustomIcon from "../custom-icon/custom-icon.component";
 import "./header.styles.scss";
@@ -9,29 +8,26 @@ import { AppStateTypes } from "../../redux/root.reducer";
 import { selectCartItemCount } from "../../redux/cart/cart.selector";
 import { connect } from "react-redux";
 
-import LogoImage from "../../assets/images/scrader.png";
+import React from "react";
 
 type Props = LinkStateProps;
 
 const Header: React.FC<Props> = ({ cartItemsCount }: Props) => (
   <header className="header">
-    <div className="header__brand-container">
-      <Link className="header__logo" to="/">
-        <img src={LogoImage} alt="Scrader logo" />
-      </Link>
+    <h1 className="heading-primary">
+      SBSC <br /> Shopping
+    </h1>
 
-      <h1 className="heading-primary">Acme Store</h1>
-    </div>
+    <Link className="header__logo" to="/">
+      <img
+        src={"http://www.sbsc.com/wp-content/uploads/2017/01/logo-1.png"}
+        alt="Brand logo"
+      />
+    </Link>
 
-    <div className="header__icons-container">
-      <CustomIcon>
-        <BiSearch className="custom-icon__search" />
-      </CustomIcon>
-
-      <CustomIcon count={cartItemsCount}>
-        <RiShoppingCartLine />
-      </CustomIcon>
-    </div>
+    <CustomIcon count={cartItemsCount}>
+      <RiShoppingCartLine />
+    </CustomIcon>
   </header>
 );
 

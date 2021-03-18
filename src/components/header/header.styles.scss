@@ -1,27 +1,25 @@
 .header {
-  min-height: 6.5rem;
+  min-height: 7.8rem;
   box-shadow: 0 5px 5px -5px rgba(#000, 0.15);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
+  padding: 0 2rem;
   position: fixed;
   width: 100%;
   background-color: var(--color-white);
   z-index: 10;
   top: 0;
 
-  &__brand-container,
-  &__icons-container {
-    height: 100%;
-    display: flex;
-    align-items: center;
+  .custom-icon svg {
+    font-size: 2.2rem;
+    margin-right: 0;
   }
 
   &__logo {
-    width: 4.5rem;
-    margin-right: 1rem;
+    width: 9.5rem;
     text-decoration: none;
+    margin: 0 1rem;
 
     img {
       width: 100%;
@@ -31,10 +29,6 @@
   }
 
   @media (min-width: 600px) {
-    padding: 0 2rem;
-
-    &__brand-container-logo {
-      margin-right: 1.5rem;
-    }
+    padding: 0 3rem;
   }
 }

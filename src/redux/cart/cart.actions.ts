@@ -4,7 +4,21 @@ import {
   ClearCartItem,
   ClearEntireCart,
   UpdateCartItem,
+  AddCartItem,
+  RemoveCartItem,
 } from "./cart.types";
+
+export const addCartItem = (cartItemToAdd: CartItemProps): AddCartItem => ({
+  type: CartActionsTypesEnums.ADD_CART_ITEM,
+  payload: cartItemToAdd,
+});
+
+export const removeCartItem = (
+  cartItemToAdd: CartItemProps,
+): RemoveCartItem => ({
+  type: CartActionsTypesEnums.REMOVE_CART_ITEM,
+  payload: cartItemToAdd,
+});
 
 export const updateCartItem = (
   cartItemToAdd: CartItemProps,
