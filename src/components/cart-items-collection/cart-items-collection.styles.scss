@@ -1,0 +1,17 @@
+.cart-items-collection {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  margin-right: 3rem;
+
+  .heading-secondary {
+    font-size: 2.5rem;
+  }
+
+  &__summary {
+    color: var(--color-gray);
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 3rem;
+  }
+}

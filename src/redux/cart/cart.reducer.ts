@@ -3,7 +3,7 @@ import {
   CartActionsTypes,
   CartActionsTypesEnums,
 } from "./cart.types";
-import { onAddCartItem } from "./cart.utils";
+import { onAddCartItem, onRemoveCartItem, onClearCartItem } from "./cart.utils";
 
 type CartReducerTypes = {
   cartItems: CartItemProps[];
@@ -19,6 +19,18 @@ const cartReducer = (state = INITIAL_STATE, action: CartActionsTypes) => {
       return {
         ...state,
         cartItems: onAddCartItem(state.cartItems, action.payload),
+      };
+
+    case CartActionsTypesEnums.REMOVE_CART_ITEM:
+      return {
+        ...state,
+        cartItems: onRemoveCartItem(state.cartItems, action.payload),
+      };
+
+    case CartActionsTypesEnums.CLEAR_CART_ITEM:
+      return {
+        ...state,
+        cartItems: onClearCartItem(state.cartItems, action.payload),
       };
 
     default:

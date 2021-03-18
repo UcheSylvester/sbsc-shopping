@@ -1,5 +1,5 @@
 import "./counter.styles.scss";
-import { IoMdArrowDropdown, IoMdArrowDropup } from "react-icons/io";
+import React from "react";
 
 type Props = {
   count: number;
@@ -13,25 +13,15 @@ const Counter: React.FC<Props> = ({
   decreaseCount,
 }: Props) => (
   <div className="counter">
+    <button className="counter__control" onClick={decreaseCount}>
+      -
+    </button>
+
     <div className="counter__count">{count}</div>
 
-    <div className="counter__controls">
-      <div
-        className="counter__control--increase"
-        role="button"
-        onClick={increaseCount}
-      >
-        <IoMdArrowDropup />
-      </div>
-
-      <div
-        className="counter__control--decrease"
-        role="button"
-        onClick={decreaseCount}
-      >
-        <IoMdArrowDropdown />
-      </div>
-    </div>
+    <button className="counter__control" onClick={increaseCount}>
+      +
+    </button>
   </div>
 );
 

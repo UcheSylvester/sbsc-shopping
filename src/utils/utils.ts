@@ -6,6 +6,8 @@ export const PRODUCTS_COLLECTION_NAMES: string[] = ["bags", "shoes", "cloth"];
 export const PLACEHOLDER_PRODUCT_IMAGE =
   "https://cel.ac/wp-content/uploads/2016/02/placeholder-img-1.jpg";
 
+export const SENTENCE_LENGTH = 200;
+
 export const formatter = (amount: number) =>
   new Intl.NumberFormat("en-US").format(amount);
 
@@ -23,3 +25,6 @@ export const findExistingItem = ({
   key,
   value,
 }: FindExistingItemOption) => items.find((item) => item[key] === value);
+
+export const sliceSentence = (sentence?: string) =>
+  sentence ? sentence.slice(0, SENTENCE_LENGTH) : "";
