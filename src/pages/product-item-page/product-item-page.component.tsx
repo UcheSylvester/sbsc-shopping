@@ -34,11 +34,13 @@ const ProductItemPage: React.FC<Props> = ({
 
   return (
     <main className="product-item-page">
-      <ProductItemDetailsWithState
-        isLoading={isLoading}
-        errorMessage={collectionErrorMessage}
-        product={productItem}
-      />
+      {!isLoading && (
+        <ProductItemDetailsWithState
+          isLoading={isLoading}
+          errorMessage={collectionErrorMessage}
+          product={productItem}
+        />
+      )}
 
       <ProductItemsCollection title="Similar Products" name={collection} />
     </main>

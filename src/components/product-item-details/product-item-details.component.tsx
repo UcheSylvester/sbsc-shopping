@@ -27,7 +27,7 @@ const ProductItemDetails: React.FC<Props> = ({ product }: Props) => {
 
   const cartItem = { ...product, collection };
 
-  const handleUpdateCartItem = () => {
+  const handleAddCartItem = () => {
     dispatch(addCartItem(cartItem as CartItemProps));
     toast("Item added to cart successfully!", {
       position: "bottom-center",
@@ -49,9 +49,7 @@ const ProductItemDetails: React.FC<Props> = ({ product }: Props) => {
         <p className="product-item-details__store-name">{merchant?.name} </p>
 
         <div className="product-item-details__buttons">
-          <CustomButton onClick={handleUpdateCartItem}>
-            Add to Cart
-          </CustomButton>
+          <CustomButton onClick={handleAddCartItem}>Add to Cart</CustomButton>
 
           <CustomButton onClick={() => history.push("/cart")}>
             Go To Cart
