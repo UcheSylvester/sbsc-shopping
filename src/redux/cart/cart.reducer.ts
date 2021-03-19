@@ -33,6 +33,12 @@ const cartReducer = (state = INITIAL_STATE, action: CartActionsTypes) => {
         cartItems: onClearCartItem(state.cartItems, action.payload),
       };
 
+    case CartActionsTypesEnums.CLEAR_ENTIRE_CART:
+      return {
+        ...state,
+        cartItems: [],
+      };
+
     default:
       return state;
   }

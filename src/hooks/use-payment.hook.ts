@@ -5,12 +5,16 @@ import {
 } from "flutterwave-react-v3/dist/types";
 import { toast } from "react-toastify";
 import { formatter } from "../utils/utils";
+import { useDispatch } from "react-redux";
+import { clearEntireCart } from "../redux/cart/cart.actions";
 
 type UsePaymentProps = {
   amount: number;
 };
 
 const usePayment = ({ amount }: UsePaymentProps) => {
+  const dispatch = useDispatch();
+
   const flutterwaveConfig: FlutterwaveConfig = {
     public_key: "FLWPUBK_TEST-b480d50acd466ed7467b777047639923-X",
     tx_ref: `${Date.now()}`,
@@ -20,7 +24,7 @@ const usePayment = ({ amount }: UsePaymentProps) => {
     customer: {
       email: "user@gmail.com",
       phonenumber: "07064586146",
-      name: "joel ugwumadu",
+      name: "Test Customer",
     },
     customizations: {
       title: "SBSC Shopping",
@@ -31,16 +35,15 @@ const usePayment = ({ amount }: UsePaymentProps) => {
   };
 
   const onPaymentSuccess = (response: FlutterWaveResponse) => {
-    console.log({ response });
     const { status } = response;
 
-    if (status === "successful") {
-      toast(`Your payment of ${formatter(amount)} was successful!`, {
-        position: "bottom-center",
-      });
+    if (status !== "successful") return;
 
-      closePaymentModal();
-    }
+    toast(`Your payment of ${formatter(amount)} was successful!`, {
+      position: "bottom-center",
+    });
+    closePaymentModal();
+    dispatch(clearEntireCart());
   };
 
   const handleFlutterPayment = useFlutterwave(flutterwaveConfig);
