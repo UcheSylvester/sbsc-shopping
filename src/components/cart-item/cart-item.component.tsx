@@ -50,7 +50,7 @@ const CartItem: React.FC<Props> = ({ cartItem }: Props) => {
           </Link>
 
           <p className="cart-item__quantity-selling-price">
-            {quantity} x {formatter(selling_price)}
+            {quantity} * {formatter(selling_price)}
           </p>
 
           <p className="cart-item__price">
